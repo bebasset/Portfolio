@@ -10,6 +10,29 @@
     margin-top: 230px;
  }
 
-div{
-   margin-inline-end: 100px;
+.footer_row {
+  display: flex;
+  justify-content: space-between; /* pushes items to opposite ends */
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.footer_row a,
+.footer_row span {
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+
+
+body {
+    background-image: url('cyber2.jpg'); /* make sure this image is in the same folder as your HTML/CSS */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
