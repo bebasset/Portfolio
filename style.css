@@ -1,6 +1,15 @@
-body{ 
-background-image: url('/cyberwallpaper.jpg') ;
-}
+
  h1{
     text-align: center;
+ }
+ div{
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 230px;
+ }
+
+ div.more_content{
+   margin-inline-start: 120px;
  }
