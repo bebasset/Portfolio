@@ -18,14 +18,29 @@
   font-size: 19px;
   margin-bottom: 0; /* don’t let margin push content down */
 }
-
-
+strong.net{
+   text-align: center;
+}
+.w{
+  text-align: center;
+  }
+  .b{
+   font-size: large;
+  }
+  .t{
+   font-size: larger;
+   font-style: bold;
+   text-align: center;
+  }
 body {
     background-image: url('cyber2.jpg'); /* make sure this image is in the same folder as your HTML/CSS */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     line-height: 1.5em;
+    font-style: Aventa;
+    margin-bottom: 25px;
+    text-align: justify;
 }
 /* Navbar styling */
 .navbar {
@@ -108,4 +123,7 @@ section {
 header h1 {
   padding: 20px;
   font-size: 28px;
+}
+body.two {
+   text-align: center;
 }
