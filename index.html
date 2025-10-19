@@ -17,10 +17,12 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #fff;
-      line-height: 1.6;
-      padding-bottom: 50px;
+      line-height: 1.8;
+      padding-bottom: 60px;
       text-align: justify;
     }
+
+    /* NAVBAR */
     .navbar {
       background-color: rgba(0, 0, 0, 0.85);
       padding: 15px 30px;
@@ -45,19 +47,23 @@
       color: #fff;
       text-decoration: underline;
     }
+
+    /* HEADER */
     header {
       text-align: center;
-      padding: 60px 20px 20px;
+      padding: 70px 20px 40px;
       background-color: rgba(0, 0, 0, 0.6);
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       color: #00e6e6;
     }
+
+    /* SECTIONS */
     section {
       background-color: rgba(0, 0, 0, 0.6);
-      padding: 30px;
-      margin: 20px auto;
+      padding: 40px;
+      margin: 30px auto;
       width: 90%;
       max-width: 1000px;
       border-radius: 12px;
@@ -65,27 +71,49 @@
     section h2 {
       text-align: center;
       color: #00e6e6;
-      font-size: 1.8rem;
-      margin-bottom: 20px;
+      font-size: 2rem;
+      margin-bottom: 25px;
     }
     section p, section li {
       font-size: 1.1rem;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
+
+    /* PROJECT STYLES */
     ul {
       padding-left: 20px;
     }
-    a {
-      color: #00e6e6;
+    .project-block {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 25px;
+      margin-bottom: 35px;
     }
-    a:hover {
-      text-decoration: underline;
+    .project-block:last-child {
+      border: none;
     }
+    .w {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+    .b {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .pdf-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    /* FOOTER */
     .footer_row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 30px;
+      padding: 25px 30px;
       background-color: rgba(255, 255, 255, 0.1);
       color: #080808;
       font-weight: bold;
@@ -98,70 +126,40 @@
     .footer_row a:hover {
       text-decoration: underline;
     }
-    .w {
-      text-align: center;
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.7rem;
+      }
+      section h2 {
+        font-size: 1.4rem;
+      }
+      section p, section li {
+        font-size: 1rem;
+      }
+      .footer_row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .navbar {
+        flex-direction: column;
+        padding: 10px;
+      }
+      .navbar ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      .navbar a {
+        font-size: 1rem;
+      }
+      section {
+        padding: 25px 15px;
+        width: 95%;
+      }
     }
-    .b {
-      font-size: large;
-    }
-    .t {
-      font-size: larger;
-      font-weight: bold;
-      text-align: center;
-    }
-    .pdf-link {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-    }
-   @media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  section h2, .highlight-box h2 {
-    font-size: 1.4rem;
-  }
-
-  section p, section li, .highlight-box p {
-    font-size: 1rem;
-  }
-
-  .footer_row {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .navbar ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  .navbar a {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 20px 15px;
-    width: 95%;
-  }
-
-  body {
-    padding: 10px;
-  }
-
-  .pdf-link {
-    font-size: 0.9rem;
-    word-wrap: break-word;
-  }
-}
   </style>
 </head>
 <body>
@@ -186,56 +184,47 @@
   </section>
 
   <section id="projects">
-  <h2>Projects</h2>
-  <ul>
-    <p class="w"><strong>Network Vulnerability Scan (Findings & Fixings) – Kali Linux</strong></p>
-    <p class="b"><strong>Lab Scope:</strong> This network scan was conducted with full authorization from the network owner, who granted explicit permission to assess the system’s security.</p>
-    <p>
-      <strong>Overview:</strong> Conducted comprehensive network vulnerability scans using Kali Linux tools, identified security weaknesses, and documented remediation steps to enhance overall network security posture.
-    </p>
-    <a class="pdf-link" href="Network Vulnerability Assesment Project.pdf" target="_blank">
-      Network Vulnerability Assessment (Findings and Fixings) Project
-    </a>
+    <h2>Projects</h2>
+    <ul>
 
-    <p class="w"><strong>DVWA: Brute Force Attack Exploitation Lab — Kali, Burp Suite, Hydra</strong></p>
-    <p class="b"><strong>Lab Scope:</strong> Performed in an isolated, authorized lab (DVWA) to simulate a real brute-force scenario. No production systems were targeted.</p>
-    <p>
-      <strong>Overview:</strong> Simulated an end-to-end brute-force workflow against a DVWA login form: validated the target, intercepted HTTP requests to extract POST parameters with Burp Suite, and executed Hydra with a vetted wordlist to assess credential strength. Documented outcomes, mapped attacker behaviors, and provided mitigation guidance (MFA, account lockout, and password policy hardening).
-    </p>
-    <a class="pdf-link" href="DVWA_Brute_Force_Lab1.1.pdf" target="_blank">
-      DVWA Brute Force Lab Report (PDF)
-    </a>
+      <div class="project-block">
+        <p class="w"><strong>Network Vulnerability Scan (Findings & Fixings) – Kali Linux</strong></p>
+        <p class="b"><strong>Lab Scope:</strong> Conducted with full authorization to assess system security.</p>
+        <p><strong>Overview:</strong> Performed comprehensive scans using Kali Linux, identified vulnerabilities, and documented remediation steps to improve network defenses.</p>
+        <a class="pdf-link" href="Network Vulnerability Assesment Project.pdf" target="_blank">
+          Network Vulnerability Assessment (Findings and Fixings) Project
+        </a>
+      </div>
 
-    <p class="w"><strong>Ransomware Attack Simulation — Lifecycle of an Attack</strong></p>
-    <p class="b"><strong>Lab Scope:</strong> Conducted in a safe, controlled environment as part of IST 323: Introduction to Information Security at Syracuse University. No real-world systems were harmed.</p>
-    <p>
-      <strong>Overview:</strong> Simulated the full lifecycle of a ransomware attack from both attacker and victim perspectives. On the attacker side, I built a ransomware dropper, crafted a spear-phishing email, and triggered the encryption payload. On the victim side, I experienced encrypted files, simulated ransom payment, and successfully recovered data with the private key. This lab provided insight into both offensive malware tactics and defensive response strategies.
-    </p>
-    <p>
-      <strong>Key Takeaways:</strong> Gained hands-on exposure to malware operations, phishing techniques, and real-world exploits such as EternalBlue. Reinforced the importance of patch management, backups, and incident response in mitigating ransomware. Strengthened my ability to think like both attacker and defender in modern cyber defense.
-    </p>
-    <a class="pdf-link" href="Performing+a+Ransomware+Attack+-+Belizaire+Bassette+II.pdf" target="_blank">
-      Ransomware Attack Simulation Report (PDF)
-    </a>
+      <div class="project-block">
+        <p class="w"><strong>DVWA: Brute Force Attack Exploitation Lab — Kali, Burp Suite, Hydra</strong></p>
+        <p class="b"><strong>Lab Scope:</strong> Conducted in an isolated DVWA lab to simulate brute-force attacks safely.</p>
+        <p><strong>Overview:</strong> Intercepted HTTP requests using Burp Suite, extracted POST parameters, and executed Hydra to test credential strength. Documented mitigations such as MFA, account lockout, and strong password policies.</p>
+        <a class="pdf-link" href="DVWA_Brute_Force_Lab1.1.pdf" target="_blank">
+          DVWA Brute Force Lab Report (PDF)
+        </a>
+      </div>
 
-    <!-- NEW PROJECT START -->
-    <p class="w"><strong>Using Encryption to Enhance Confidentiality and Integrity (4e)</strong></p>
-    <p class="b"><strong>Lab Scope:</strong> Completed as part of IST 323: Introduction to Information Security at Syracuse University, this project explored practical encryption and key management concepts in a secure, simulated environment.</p>
-    <p>
-      <strong>Overview:</strong> Implemented both symmetric and asymmetric encryption workflows using <strong>Kleopatra, OpenSSL, and WinSCP</strong> alongside <strong>Linux terminal cmdlets</strong> (<code>echo</code>, <code>touch</code>, <code>ls</code>, <code>gpg</code>) to create, encrypt, sign, transfer, and verify files. Generated and exchanged encryption key pairs, created digital signatures, and verified data authenticity using Kleopatra’s certificate manager.
-    </p>
-    <p>
-      <strong>Key Takeaways:</strong> 
-      Strengthened understanding of public/private key cryptography, digital signatures, and hybrid encryption systems. Learned how encryption ensures <strong>confidentiality</strong> and <strong>integrity</strong> while maintaining authentication between communicating parties. This project demonstrated how encryption and verification are critical components of securing modern information systems.
-    </p>
-    <a class="pdf-link" href="Using Encryption to Enhance Confidentiality and Integrity (4e) - Belizaire Bassette II.pdf" target="_blank">
-      Using Encryption to Enhance Confidentiality and Integrity Project (PDF)
-    </a>
-    <!-- NEW PROJECT END -->
-  </ul>
-</section>
+      <div class="project-block">
+        <p class="w"><strong>Ransomware Attack Simulation — Lifecycle of an Attack</strong></p>
+        <p class="b"><strong>Lab Scope:</strong> Conducted in a safe, controlled environment for IST 323: Introduction to Information Security at Syracuse University.</p>
+        <p><strong>Overview:</strong> Simulated a complete ransomware lifecycle: built a ransomware dropper, crafted a phishing email, triggered the encryption payload, and practiced recovery using private key decryption. This provided insight into both attack and defense strategies.</p>
+        <p><strong>Key Takeaways:</strong> Gained exposure to malware behavior, phishing, and exploits like EternalBlue. Reinforced the value of backups, patch management, and incident response readiness.</p>
+        <a class="pdf-link" href="Performing+a+Ransomware+Attack+-+Belizaire+Bassette+II.pdf" target="_blank">
+          Ransomware Attack Simulation Report (PDF)
+        </a>
+      </div>
 
-      </li>
+      <div class="project-block">
+        <p class="w"><strong>Using Encryption to Enhance Confidentiality and Integrity (4e)</strong></p>
+        <p class="b"><strong>Lab Scope:</strong> Completed as part of IST 323: Introduction to Information Security at Syracuse University, this lab explored real-world encryption and key management concepts.</p>
+        <p><strong>Overview:</strong> Implemented symmetric and asymmetric encryption using <strong>Kleopatra, OpenSSL, WinSCP</strong>, and Linux cmdlets (<code>echo</code>, <code>touch</code>, <code>ls</code>, <code>gpg</code>) to encrypt, sign, transfer, and verify data. Demonstrated the role of encryption in ensuring secure communication.</p>
+        <p><strong>Key Takeaways:</strong> Strengthened knowledge of cryptographic principles, digital signatures, and hybrid encryption systems. Learned how encryption upholds <strong>confidentiality</strong>, <strong>integrity</strong>, and <strong>authentication</strong> in cybersecurity operations.</p>
+        <a class="pdf-link" href="Using Encryption to Enhance Confidentiality and Integrity (4e) - Belizaire Bassette II.pdf" target="_blank">
+          Using Encryption to Enhance Confidentiality and Integrity Project (PDF)
+        </a>
+      </div>
+
     </ul>
   </section>
 
