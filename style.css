@@ -13,6 +13,12 @@
       --radius-full: 999px;
       --transition-fast: 0.25s ease;
     }
+      /* Fix anchor jump for all sections */
+:root { --nav-offset: 90px; }
+
+      section {
+        scroll-margin-top: var(--nav-offset);
+      }
 
     * {
       margin: 0;
