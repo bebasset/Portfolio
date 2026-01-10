@@ -35,6 +35,16 @@
         padding-top: 6px;
       }
 
+/* Anchor offset for sticky navbar (desktop + mobile) */
+:root { --nav-offset: 88px; } /* desktop default */
+
+@media (max-width: 768px) {
+  :root { --nav-offset: 132px; } /* mobile nav is taller */
+}
+
+      section {
+  scroll-margin-top: var(--nav-offset);
+}
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
