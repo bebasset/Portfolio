@@ -3,434 +3,758 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Belizaire Bassette II — cybersecurity projects and offensive security work products. ForeThreat Security is my professional brand and portfolio identity." />
-  <title>Belizaire Bassette II - Cybersecurity Portfolio</title>
+  <meta name="description" content="Belizaire Bassette II — Junior Penetration Tester & offensive security practitioner. Web application, network, and API security assessments, exploitation, and professional reporting." />
+  <meta name="author" content="Belizaire Bassette II" />
+  <meta name="theme-color" content="#050810" />
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="Belizaire Bassette II — Offensive Security Portfolio" />
+  <meta property="og:description" content="Junior Penetration Tester. 73 vulnerabilities across 5 client engagements. eJPT certified; OSCP & BSCP in progress." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://bebasset.github.io/" />
 
-    <link rel="stylesheet" href="style.css" />
+  <title>Belizaire Bassette II — Offensive Security Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <div class="nav-brand">
-        <div class="nav-dot"></div>
-        <span>Belizaire Bassette II</span>
-      </div>
-      
-      <ul>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="" target="_blank" rel="noopener" title="Authorized penetration testing services"> ForeThreat Security </a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/belizaireb" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+  <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- ============================ BOOT LOADER ============================ -->
+  <div id="loader" role="status" aria-label="Loading portfolio">
+    <div class="boot" aria-hidden="true">
+      <div class="boot-head">
+        <span class="dotset"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+        <span>root@bassette:~/portfolio</span>
+      </div>
+      <div class="boot-line" data-i="0"><span class="tag">[ boot ]</span> initializing secure session…</div>
+      <div class="boot-line" data-i="1"><span class="ok">[  ok  ]</span> loading operator profile: <span style="color:var(--accent)">belizaire_bassette</span></div>
+      <div class="boot-line" data-i="2"><span class="ok">[  ok  ]</span> mounting engagement archive [ 73 findings / 5 engagements ]</div>
+      <div class="boot-line" data-i="3"><span class="ok">[  ok  ]</span> establishing encrypted channel…</div>
+      <div class="boot-grant">&gt;&gt; ACCESS GRANTED<span class="cursor"></span></div>
+      <div class="boot-bar"><i id="bootBar"></i></div>
+    </div>
+  </div>
+
+  <!-- ============================ NAV ============================ -->
+  <nav class="nav" id="nav" aria-label="Primary">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top"><span class="prompt">bb@sec:~$</span> whoami<span class="cursor"></span></a>
+      <ul class="nav-links">
+        <li><a href="#whoami">./whoami</a></li>
+        <li><a href="#arsenal">./arsenal</a></li>
+        <li><a href="#experience">./experience</a></li>
+        <li><a href="#engagements">./engagements</a></li>
+        <li><a href="#certs">./certs</a></li>
+        <li><a href="#contact">./contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <span class="nav-status">// <b id="navSection">cover</b></span>
+        <a class="nav-resume" href="Belizaire_Bassette_PenTesterResume.pdf" target="_blank" rel="noopener">résumé.pdf ↓</a>
+      </div>
     </div>
   </nav>
 
-  <div class="page-wrapper">
-    <!-- HERO -->
-    <header class="hero">
-      <div>
-        <div class="hero-eyebrow">
-          <span></span>
-          <p>Information Security · Penetration Testing · ForeThreat Security </p>
-        </div>
-        <h1>Cybersecurity Portfolio of <span>Belizaire Bassette II</span></h1>
-        <p class="hero-subtitle">Senior at Syracuse University majoring in Information Management &amp; Technology (Information Security). I've build job-ready cybersecurity skills through hands-on labs, reporting, and ethical testing. <br/><span style="color: var(--text-muted);">Driven to secure the digital world by understanding threats before they strike.</span></p>
-        <div class="hero-tags"><span class="tag-chip">Network Pen Testing</span><span class="tag-chip">Web App Pen Testing</span><span class="tag-chip">API Security Testing</span><span class="tag-chip">Burp Suite · Nmap · Nessus</span><span class="tag-chip">Reporting & Remediation</span></div>
-        <div class="hero-actions"><a href="#projects" class="btn-primary">View Security Projects</a>
-          <a href="https://services.threatsensesolutions.com" class="btn-ghost" target="_blank" rel="noopener">Services (Authorized Testing)</a>
-          <a href="mailto:bassette.secure@gmail.com" class="btn-ghost">Contact</a></div>
-      </div>
-
-      <div class="hero-right">
-        <div class="hero-card">
-          <div class="hero-card-header">
-            <div>
-              <div class="hero-card-title">Current Focus</div>
-              <div style="font-size:0.75rem;color:var(--text-muted);margin-top:3px;">Web App &amp; Network Pen Testing</div>
+  <main id="main">
+    <!-- ============================ HERO / COVER ============================ -->
+    <header class="hero section" id="top">
+      <div class="hero-grid">
+        <div class="term hero-main">
+          <div class="term-bar">
+            <span class="term-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+            <span class="term-file">operator@offsec — session</span>
+          </div>
+          <div class="term-body">
+            <p class="hero-prompt"><span class="prompt">bb@sec:~$</span> whoami</p>
+            <h1 class="hero-name">Belizaire<br><span class="accent">Bassette II</span></h1>
+            <p class="hero-role">Junior Penetration Tester // Offensive Security</p>
+            <p class="hero-desc">
+              I break into web apps, networks, and APIs the way an attacker would — then turn every finding
+              into clear, reproducible reporting that helps teams fix what matters. Driven to secure the digital
+              world by understanding threats before they strike.
+            </p>
+            <span class="status-pill"><span class="live"></span> Available for engagements &amp; full-time roles</span>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#engagements">./view_engagements</a>
+              <a class="btn btn-ghost" href="Belizaire_Bassette_PenTesterResume.pdf" target="_blank" rel="noopener">↓ download_résumé</a>
+              <a class="btn btn-ghost" href="#contact">./contact</a>
             </div>
-            <div class="hero-card-pill">IST 323 · Labs</div>
-          </div>
-          <div class="hero-card-body">
-            <p>Recent hands-on work:</p>
-            
-      <ul>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/belizaireb" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
-
           </div>
         </div>
+
+        <aside class="term hero-side" aria-label="Operator profile">
+          <div class="term-bar">
+            <span class="term-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+            <span class="term-file">cat profile.txt</span>
+          </div>
+          <div class="term-body">
+            <div class="id-row"><span class="k">role</span><span class="v">Junior Penetration Tester</span></div>
+            <div class="id-row"><span class="k">org</span><span class="v">Maltek Solutions LLC · PTaaS</span></div>
+            <div class="id-row"><span class="k">edu</span><span class="v">Syracuse University · B.S. IM&amp;T</span></div>
+            <div class="id-row"><span class="k">focus</span><span class="v">Web · Network · API</span></div>
+            <div class="id-row"><span class="k">certs</span><span class="v">eJPT · OSCP&nbsp;(ip) · BSCP&nbsp;(ip)</span></div>
+            <div class="id-row"><span class="k">loc</span><span class="v">Syracuse, NY</span></div>
+            <div class="id-row"><span class="k">linkedin</span><span class="v"><a href="https://www.linkedin.com/in/belizaireb" target="_blank" rel="noopener">/in/belizaireb</a></span></div>
+          </div>
+        </aside>
       </div>
     </header>
 
-    
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I’m Belizaire Bassette II — a Syracuse University student and penetration tester focused on practical offensive security.
-        My slogan is: <strong>Driven to secure the digital world by understanding threats before they strike.</strong>
-      </p>
-      <p>
-        ForeThreat is my professional brand and portfolio identity used for ethical security research, responsible testing, and clear reporting.
-        This site is primarily a demonstration of how I test, document, and communicate risk.
-      </p>
+    <!-- ============================ WHOAMI / ABOUT ============================ -->
+    <section class="section" id="whoami">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="path">bb@sec:~$</span> cat whoami.md</span>
+        <h2 class="sec-title">whoami</h2>
+      </div>
+      <div class="term">
+        <div class="term-bar">
+          <span class="term-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+          <span class="term-file">whoami.md</span>
+        </div>
+        <div class="term-body">
+          <p style="color:var(--muted)">
+            I'm an <strong style="color:var(--text)">offensive security practitioner and Junior Penetration Tester</strong>
+            with hands-on experience running web application and network security assessments inside a
+            <strong style="color:var(--text)">PTaaS consulting environment</strong>. Across 5 client engagements I identified
+            <strong style="color:var(--text)">73 vulnerabilities</strong> — including high-impact IDOR, XSS, and Arbitrary File
+            Upload findings — each documented with proof-of-concept exploits, CVSS ratings, and actionable remediation.
+            I was <strong style="color:var(--text)">promoted from intern to Junior Penetration Tester</strong> on the strength
+            of consistent, high-quality findings and professional reporting.
+          </p>
+
+          <div class="stats">
+            <div class="stat"><div class="n" data-target="73" data-suffix="">0</div><div class="l">Vulnerabilities identified</div></div>
+            <div class="stat"><div class="n" data-target="5" data-suffix="">0</div><div class="l">Client engagements</div></div>
+            <div class="stat"><div class="n" data-target="1" data-suffix="" data-text="eJPT">0</div><div class="l">Certified (OSCP &amp; BSCP in progress)</div></div>
+          </div>
+
+          <div class="findings">
+            <div class="findings-title">// findings breakdown — 5 engagements</div>
+            <div class="finding-row"><span class="fname">Info Disclosure</span><span class="finding-track"><i class="finding-fill sev-info" data-w="100"></i></span><span class="fcount">26</span></div>
+            <div class="finding-row"><span class="fname">XSS</span><span class="finding-track"><i class="finding-fill sev-high" data-w="38"></i></span><span class="fcount">10</span></div>
+            <div class="finding-row"><span class="fname">Missing Sec Headers</span><span class="finding-track"><i class="finding-fill sev-med" data-w="35"></i></span><span class="fcount">9</span></div>
+            <div class="finding-row"><span class="fname">IDOR</span><span class="finding-track"><i class="finding-fill sev-crit" data-w="27"></i></span><span class="fcount">7</span></div>
+            <div class="finding-row"><span class="fname">Arbitrary File Upload</span><span class="finding-track"><i class="finding-fill sev-crit" data-w="12"></i></span><span class="fcount">3</span></div>
+            <div class="finding-row"><span class="fname">CSRF</span><span class="finding-track"><i class="finding-fill sev-high" data-w="8"></i></span><span class="fcount">2</span></div>
+            <div class="finding-row"><span class="fname">Mass Assignment</span><span class="finding-track"><i class="finding-fill sev-high" data-w="4"></i></span><span class="fcount">1</span></div>
+            <p style="font-family:var(--mono);font-size:0.72rem;color:var(--faint);margin-top:0.8rem;">
+              + specialized findings: CSV/XLSX formula injection · insecure password-recovery workflow · username enumeration
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-<!-- PROJECTS -->
-    <section id="projects">
-      <h2>Highlighted Security Projects</h2>
-      <p>
-        Each project below is based on a guided or semi-guided lab where I worked through the full workflow: from reconnaissance and exploitation to remediation and reporting.
-      </p>
-
-      <div class="projects-grid">
-
-        <!-- Archangel TryHackMe -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Archangel (TryHackMe) — Full Attack Chain Walkthrough</h3>
-            <span class="project-pill">Boot2Root · Web Exploitation</span>
+    <!-- ============================ ARSENAL / SKILLS ============================ -->
+    <section class="section" id="arsenal">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="path">bb@sec:~$</span> ls -la ./arsenal</span>
+        <h2 class="sec-title">Arsenal</h2>
+        <p class="sec-sub">Tools, languages, and methodologies I use across the full assessment lifecycle — recon → exploitation → privilege escalation → reporting.</p>
+      </div>
+      <div class="arsenal-grid">
+        <div class="arsenal-card">
+          <h3><span class="hash">#</span> Offensive Tooling</h3>
+          <div class="chips">
+            <span class="chip">Burp Suite</span><span class="chip">Nmap</span><span class="chip">Nessus</span>
+            <span class="chip">Hydra</span><span class="chip">Metasploit</span><span class="chip">OpenVAS</span>
+            <span class="chip">Hashcat</span><span class="chip">Evil-WinRM</span>
           </div>
-        
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Authorized TryHackMe Boot2Root lab demonstrating full-chain web exploitation, post-exploitation, and privilege escalation.
+        </div>
+        <div class="arsenal-card">
+          <h3><span class="hash">#</span> Languages &amp; Scripting</h3>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Bash</span><span class="chip">SQL</span>
           </div>
-        
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Compromised a Linux-based target using a structured penetration testing methodology.
-              Identified and exploited a <strong>Local File Inclusion (LFI)</strong> vulnerability, escalated it to
-              <strong>Remote Code Execution (RCE)</strong> via log poisoning, established a reverse shell,
-              and chained multiple misconfigurations to achieve full <strong>root compromise</strong>.
-            </p>
-        
-            <p>
-              <strong>Attack Chain:</strong> Reconnaissance → Directory Enumeration → LFI Discovery →
-              LFI-to-RCE → Reverse Shell → Cron Abuse → SUID Binary Analysis → <strong>PATH Hijacking</strong>.
-            </p>
-        
-            <p>
-              <strong>Key Takeaways:</strong> Demonstrates real-world exploit chaining, manual testing discipline,
-              and the ability to translate technical flaws into concrete security impact.
-            </p>
-        
-            <div class="project-tags">
-              <span class="project-tag">TryHackMe</span>
-              <span class="project-tag">LFI → RCE</span>
-              <span class="project-tag">Burp Suite</span>
-              <span class="project-tag">Linux PrivEsc</span>
-              <span class="project-tag">Cron Abuse</span>
-              <span class="project-tag">PATH Hijacking</span>
-            </div>
-        
-            <a class="project-link"
-               href="Archangel THM Room Walkthrough.pdf"
-               target="_blank">
-              View Full Walkthrough (PDF) <span>↗</span>
-            </a>
+        </div>
+        <div class="arsenal-card">
+          <h3><span class="hash">#</span> Operating Systems</h3>
+          <div class="chips">
+            <span class="chip">Kali Linux</span><span class="chip">Linux</span><span class="chip">Windows</span>
           </div>
-        </article>
-
-        <!-- Attacktive Directory TryHackMe -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Attacktive Directory (TryHackMe) — Active Directory Attack Path Walkthrough</h3>
-            <span class="project-pill">Active Directory · Internal Enumeration</span>
+        </div>
+        <div class="arsenal-card">
+          <h3><span class="hash">#</span> Techniques</h3>
+          <div class="chips">
+            <span class="chip">Web App Testing</span><span class="chip">Network Enumeration</span>
+            <span class="chip">Privilege Escalation</span><span class="chip">Active Directory Exploitation</span>
+            <span class="chip">API Testing</span><span class="chip">Exploit Chaining</span>
           </div>
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Authorized TryHackMe Active Directory lab covering enumeration, Kerberos abuse, share enumeration, DCSync-style credential dumping, and privilege escalation.
+        </div>
+        <div class="arsenal-card">
+          <h3><span class="hash">#</span> Frameworks &amp; Standards</h3>
+          <div class="chips">
+            <span class="chip">OWASP Top 10</span><span class="chip">MITRE ATT&amp;CK</span>
+            <span class="chip">NIST CSF</span><span class="chip">CVSS</span>
           </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Worked through a full Windows domain attack path from initial host discovery to full domain compromise. Identified the domain controller through exposed AD services, enumerated valid users with <strong>Kerbrute</strong>, exploited an <strong>AS-REP Roasting</strong> weakness to recover <strong>svc-admin</strong> credentials, and used authenticated <strong>SMB</strong> enumeration to recover additional credentials from a backup share.
-            </p>
-            <p>
-              <strong>Attack Chain:</strong> Nmap host discovery and port scanning → Enum4linux domain enumeration → Kerberos username validation → AS-REP Roasting → Hashcat cracking → SMB share enumeration → Base64 credential recovery → <strong>secretsdump.py</strong> / DRSUAPI abuse → <strong>Pass-the-Hash</strong> with Evil-WinRM → flag and proof retrieval.
-            </p>
-            <p>
-              <strong>Key Takeaways:</strong> Demonstrates practical understanding of Windows domain enumeration, Kerberos attack paths, credential abuse, SMB share analysis, domain privilege escalation, and how small identity weaknesses can be chained into full Active Directory compromise.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">TryHackMe</span>
-              <span class="project-tag">Active Directory</span>
-              <span class="project-tag">Kerbrute</span>
-              <span class="project-tag">AS-REP Roasting</span>
-              <span class="project-tag">secretsdump.py</span>
-              <span class="project-tag">Evil-WinRM</span>
-            </div>
-            <a class="project-link" href="THM+Attacktive+Directory+Writeup1.pdf" target="_blank">
-              View Full Walkthrough (PDF) <span>↗</span>
-            </a>
+        </div>
+        <div class="arsenal-card">
+          <h3><span class="hash">#</span> Reporting &amp; Delivery</h3>
+          <div class="chips">
+            <span class="chip">PoC Development</span><span class="chip">CVSS Risk Rating</span>
+            <span class="chip">Reproduction Steps</span><span class="chip">Remediation Guidance</span>
+            <span class="chip">Client Deliverables</span>
           </div>
-        </article>
-        
-        <!-- pfSense Pen Testing Lab -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Penetration Testing a pfSense Firewall</h3>
-            <span class="project-pill">Network Pen Testing Lab</span>
-          </div>
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Completed for IST 323: Introduction to Information Security. Assessed a Windows-based enterprise network protected by a pfSense firewall, from recon to remediation.
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Reviewed pfSense WAN/LAN rules, identified weaknesses, and executed both guided (white-box) and unguided (black-box) penetration tests. Used
-              <strong>Nessus</strong>, <strong>Nmap</strong>, <strong>Traceroute</strong>, and <strong>OpenVAS</strong> to map hosts, enumerate services, and analyze CVEs. Hardened firewall policies,
-              reduced attack surface, and rescanned to confirm that changes removed vulnerabilities without breaking legitimate access. Completed a DMZ assessment to evaluate best practices and common mistakes.
-            </p>
-            <p>
-              <strong>Key Takeaways:</strong> Practiced the full five-step penetration testing methodology (recon → scanning → vulnerability analysis → exploitation planning → remediation). Strengthened firewall
-              hardening skills, vulnerability triage, and DMZ design analysis while balancing <strong>security</strong>, <strong>usability</strong>, and <strong>business needs</strong>.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">pfSense</span>
-              <span class="project-tag">Nmap</span>
-              <span class="project-tag">Nessus</span>
-              <span class="project-tag">OpenVAS</span>
-              <span class="project-tag">DMZ Hardening</span>
-            </div>
-            <a class="project-link" href="Penetration-Testing-a-pfSense-Firewall-(3e)-Belizaire-Bassette-II.pdf" target="_blank">
-              View Lab Report (PDF) <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Network Vulnerability Scan -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Network Vulnerability Assessment (Findings &amp; Fixes)</h3>
-            <span class="project-pill">Kali Linux · Nessus</span>
-          </div>
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Conducted with full authorization to assess system and network security posture using attacker-style tooling.
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Performed comprehensive scans from a Kali Linux environment, enumerating open ports, services, and misconfigurations. Documented critical, high, and medium-risk findings
-              and mapped them to concrete remediation steps such as patching, disabling legacy protocols, and tightening firewall rules.
-            </p>
-            <p>
-              <strong>Key Takeaways:</strong> Improved my ability to translate scan output into actionable fixes and communicate risk clearly to technical and non-technical stakeholders through a structured report.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Kali Linux</span>
-              <span class="project-tag">Vulnerability Scanning</span>
-              <span class="project-tag">Reporting</span>
-            </div>
-            <a class="project-link" href="Network Vulnerability Assesment Project.pdf" target="_blank">
-              Network Vulnerability Assessment Project (PDF) <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- DVWA Brute Force Lab -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">DVWA: Brute Force Attack Exploitation Lab</h3>
-            <span class="project-pill">Web App Pen Testing</span>
-          </div>
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Conducted in an isolated Damn Vulnerable Web Application (DVWA) environment to safely simulate brute-force attacks.
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Intercepted HTTP login requests with <strong>Burp Suite</strong>, extracted POST parameters, and used <strong>Hydra</strong> to automate credential guessing. Evaluated the
-              impact of weak passwords and lack of rate limiting on authentication endpoints, then documented defenses such as MFA, account lockout policies, and stronger password requirements.
-            </p>
-            <p>
-              <strong>Key Takeaways:</strong> Gained practical experience with web attack tooling, authentication weaknesses, and the security controls that can stop brute-force attacks before they escalate.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">DVWA</span>
-              <span class="project-tag">Burp Suite</span>
-              <span class="project-tag">Hydra</span>
-              <span class="project-tag">Auth Hardening</span>
-            </div>
-            <a class="project-link" href="DVWA_Brute_Force_Lab1.1.pdf" target="_blank">
-              DVWA Brute Force Lab Report (PDF) <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Ransomware Simulation -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Ransomware Attack Simulation — Lifecycle of an Attack</h3>
-            <span class="project-pill">Offensive &amp; Defensive</span>
-          </div>
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Performed in a safe, controlled environment for IST 323 to understand ransomware end-to-end from attacker and defender perspectives.
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Simulated the full ransomware lifecycle: built a dropper, delivered it via phishing, executed the payload to encrypt victim files, and then performed recovery using a
-              private key. Explored exploits like EternalBlue and observed host behavior during and after infection.
-            </p>
-            <p>
-              <strong>Key Takeaways:</strong> Reinforced the importance of offline backups, timely patch management, email security controls, and a rehearsed incident response plan when dealing with ransomware.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Ransomware</span>
-              <span class="project-tag">Phishing Simulation</span>
-              <span class="project-tag">Incident Response</span>
-            </div>
-            <a class="project-link" href="Performing+a+Ransomware+Attack+-+Belizaire+Bassette+II.pdf" target="_blank">
-              Ransomware Attack Simulation Report (PDF) <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Encryption Lab -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Using Encryption to Enhance Confidentiality &amp; Integrity</h3>
-            <span class="project-pill">Crypto &amp; Key Management</span>
-          </div>
-          <div class="project-meta">
-            <strong>Lab Scope:</strong> Completed as part of IST 323 to explore real-world encryption workflows and key management.
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Implemented symmetric and asymmetric encryption using <strong>Kleopatra</strong>, <strong>OpenSSL</strong>, <strong>WinSCP</strong>, and Linux tools
-              (<code>echo</code>, <code>touch</code>, <code>ls</code>, <code>gpg</code>) to encrypt, sign, transfer, and verify data between systems. Demonstrated how encryption and digital signatures secure
-              communication channels.
-            </p>
-            <p>
-              <strong>Key Takeaways:</strong> Strengthened understanding of cryptographic principles, public/private key pairs, digital signatures, and hybrid encryption systems that uphold
-              <strong>confidentiality</strong>, <strong>integrity</strong>, and <strong>authentication</strong>.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">OpenSSL</span>
-              <span class="project-tag">GPG</span>
-              <span class="project-tag">SFTP · WinSCP</span>
-            </div>
-            <a class="project-link" href="Using Encryption to Enhance Confidentiality and Integrity (4e) - Belizaire Bassette II.pdf" target="_blank">
-              Encryption Lab Project (PDF) <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-      
-        <!-- API Pen Testing Placeholder -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">API Penetration Testing — Authorization (BOLA/IDOR) Practice</h3>
-            <span class="project-pill">API Security</span>
-          </div>
-          <div class="project-meta">
-            <strong>Scope:</strong> Structured practice validating object-level authorization, token handling, and rate limiting in REST APIs (authorized labs).
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Tested API endpoints for broken object level authorization (BOLA/IDOR), excessive data exposure, and weak access control.
-              Captured request/response evidence, wrote reproduction steps, and documented secure design guidance.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">REST</span>
-              <span class="project-tag">BOLA/IDOR</span>
-              <span class="project-tag">JWT/Tokens</span>
-              <span class="project-tag">Rate Limiting</span>
-            </div>
-            <a class="project-link" href="#" title="Add a link when ready">
-              Writeup coming soon <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- Web App Testing Placeholder -->
-        <article class="project-card">
-          <div class="project-header-row">
-            <h3 class="project-title">Web Application Testing — OWASP-aligned Methodology (Ongoing)</h3>
-            <span class="project-pill">Web App Pen Testing</span>
-          </div>
-          <div class="project-meta">
-            <strong>Scope:</strong> Continuous practice using Burp Suite workflows across authentication, session, access control, and input validation.
-          </div>
-          <div class="project-body">
-            <p>
-              <strong>Overview:</strong> Built repeatable testing checklists and report templates that translate findings into clear remediation steps.
-              This section will include sanitized writeups and vulnerability narratives as they are finalized.
-            </p>
-            <div class="project-tags">
-              <span class="project-tag">Burp Suite</span>
-              <span class="project-tag">OWASP</span>
-              <span class="project-tag">Auth/Session</span>
-              <span class="project-tag">Access Control</span>
-            </div>
-            <a class="project-link" href="#" title="Add a link when ready">
-              Writeups coming soon <span>↗</span>
-            </a>
-          </div>
-        </article>
-</div>
-    </section>
-  </div>
-  
-<!-- AUTH SERVICES -->
-<section id="services-link">
-  <h2>Cybersecurity Research & Services</h2>
-
-  <p>
-    In addition to my academic and internship work, I maintain
-    <strong>Forethreat</strong> as my professional security research
-    and portfolio brand.
-  </p>
-
-  <p>
-    For penetration testing services and or advice — including
-    <strong>Network</strong>, <strong>Web Application</strong>, and
-    <strong>API</strong> testing tips and services — visit:
-  </p>
-
-  <p>
-    <a href=""
-       target="_blank"
-       rel="noopener">
-      services.threatsensesolutions.com ↗
-    </a>
-  </p>
-
-  <p style="font-size: 0.9em; opacity: 0.85;">
-    All testing is performed ethically and only with explicit authorization.
-  </p>
-</section>
-<!-- END OF AUTH SERVICES -->
-  
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>
-        For internships, full-time role opportunities (Job Inquries): <strong><a href="mailto:bebasset@syr.edu">bebasset@syr.edu</a></strong>
-      </p>
-      <p>
-        For collaborations, or authorized assessments(Consulting): <strong><a href="mailto:bassette.secure@gmail.com">bassette.secure@gmail.com</a></strong>
-      </p>
-      <p>
-        <strong>Ethical note:</strong> I only test assets with explicit authorization or within approved programs.
-      </p>
+        </div>
+      </div>
     </section>
 
+    <!-- ============================ EXPERIENCE ============================ -->
+    <section class="section" id="experience">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="path">bb@sec:~$</span> tail -f experience.log</span>
+        <h2 class="sec-title">Experience</h2>
+      </div>
+      <div class="timeline">
+        <div class="exp">
+          <div class="exp-marker"></div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <span class="exp-role">Junior Penetration Tester <span style="font-weight:400;color:var(--faint);font-size:0.85rem;">(promoted from Intern)</span></span>
+              <span class="exp-date">Dec 2025 – Present</span>
+            </div>
+            <div class="exp-org">Maltek Solutions LLC · Remote <span class="sub">· PTaaS consulting</span></div>
+            <ul class="exp-list">
+              <li><strong>Promoted from Penetration Testing Intern to Junior Penetration Tester</strong> based on engagement performance and the quality of vulnerability findings and client deliverables.</li>
+              <li>Conducted <strong>black-box and gray-box</strong> penetration tests across <strong>5 web application engagements</strong>, identifying <strong>73 total vulnerabilities</strong>.</li>
+              <li>Discovered and validated high-impact findings — <strong>7 IDOR, 10 XSS, 3 Arbitrary File Upload, 2 CSRF, 1 Mass Assignment</strong> — each with documented proof-of-concept exploits demonstrating business impact.</li>
+              <li>Identified <strong>26 Information Disclosure</strong> instances and <strong>9 Missing Security Header</strong> misconfigurations, directly reducing client attack surface.</li>
+              <li>Uncovered specialized issues including <strong>CSV/XLSX formula injection</strong>, insecure password-recovery workflow, and username enumeration — depth across OWASP Top 10 categories.</li>
+              <li>Delivered professional reports per engagement with <strong>CVSS risk ratings, reproduction steps, and remediation guidance</strong> for client dev and security teams.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="exp">
+          <div class="exp-marker"></div>
+          <div class="exp-body">
+            <div class="exp-top">
+              <span class="exp-role">IT Risk Management Apprentice</span>
+              <span class="exp-date">May 2024 – Dec 2024</span>
+            </div>
+            <div class="exp-org">Independent Pulmonary Therapy Services</div>
+            <ul class="exp-list">
+              <li>Performed <strong>HIPAA-aligned access control and policy audits</strong> across healthcare IT systems.</li>
+              <li>Assisted with secure handling and classification of sensitive <strong>patient health information (PHI)</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ============================ ENGAGEMENTS & LABS / PROJECTS ============================ -->
+    <section class="section" id="engagements">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="path">bb@sec:~$</span> ./run_engagements --list</span>
+        <h2 class="sec-title">Engagements &amp; Labs</h2>
+        <p class="sec-sub">Selected hands-on work — from client-style methodology to CTF-grade exploitation. Click a card for the attack chain; full reports open as PDFs. All testing performed with explicit authorization.</p>
+      </div>
+
+      <div class="cat-head"><span class="path">~/</span>boot2root · tryhackme</div>
+      <div class="proj-grid">
+        <article class="proj-card clickable" data-project="archangel" tabindex="0" role="button" aria-label="Open details: Archangel TryHackMe">
+          <div class="proj-top"><span class="proj-icon">🐧</span><span class="proj-badge">LFI → RCE → root</span></div>
+          <div class="proj-cat">Linux · Web Exploitation</div>
+          <h3>Archangel — Full Attack Chain</h3>
+          <p class="proj-desc">Chained an LFI to unauthenticated RCE via log poisoning, then escalated to root through cron abuse and PATH hijacking.</p>
+          <div class="proj-tags"><span class="tag">TryHackMe</span><span class="tag">LFI→RCE</span><span class="tag">Linux PrivEsc</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+        <article class="proj-card clickable" data-project="attacktive" tabindex="0" role="button" aria-label="Open details: Attacktive Directory">
+          <div class="proj-top"><span class="proj-icon">🪟</span><span class="proj-badge">domain compromise</span></div>
+          <div class="proj-cat">Active Directory · Windows</div>
+          <h3>Attacktive Directory — AD Attack Path</h3>
+          <p class="proj-desc">Enumerated a Windows domain, abused AS-REP Roasting to recover creds, and pivoted to domain compromise via DCSync + Pass-the-Hash.</p>
+          <div class="proj-tags"><span class="tag">Kerbrute</span><span class="tag">AS-REP Roasting</span><span class="tag">secretsdump</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+      </div>
+
+      <div class="cat-head"><span class="path">~/</span>network security</div>
+      <div class="proj-grid">
+        <article class="proj-card clickable" data-project="pfsense" tabindex="0" role="button" aria-label="Open details: pfSense firewall pentest">
+          <div class="proj-top"><span class="proj-icon">🧱</span><span class="proj-badge">recon → remediation</span></div>
+          <div class="proj-cat">Firewall · Enterprise Network</div>
+          <h3>pfSense Firewall Penetration Test</h3>
+          <p class="proj-desc">Assessed a Windows enterprise network behind pfSense — white-box &amp; black-box — then hardened policy and re-scanned to confirm fixes.</p>
+          <div class="proj-tags"><span class="tag">Nmap</span><span class="tag">Nessus</span><span class="tag">OpenVAS</span><span class="tag">DMZ</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+        <article class="proj-card clickable" data-project="netvuln" tabindex="0" role="button" aria-label="Open details: Network vulnerability assessment">
+          <div class="proj-top"><span class="proj-icon">📡</span><span class="proj-badge">findings &amp; fixes</span></div>
+          <div class="proj-cat">Kali Linux · Nessus</div>
+          <h3>Network Vulnerability Assessment</h3>
+          <p class="proj-desc">Enumerated ports, services, and misconfigurations from Kali; triaged critical/high/medium findings and mapped each to concrete remediation.</p>
+          <div class="proj-tags"><span class="tag">Vulnerability Scanning</span><span class="tag">Triage</span><span class="tag">Reporting</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+      </div>
+
+      <div class="cat-head"><span class="path">~/</span>web &amp; api</div>
+      <div class="proj-grid">
+        <article class="proj-card clickable" data-project="api" tabindex="0" role="button" aria-label="Open details: API penetration testing BOLA IDOR">
+          <div class="proj-top"><span class="proj-icon">🔑</span><span class="proj-badge">BOLA / IDOR</span></div>
+          <div class="proj-cat">API Security · REST</div>
+          <h3>API Pen Testing — BOLA / IDOR</h3>
+          <p class="proj-desc">Tested REST APIs for broken object-level authorization, excessive data exposure, and weak access control via JWT manipulation and object-reference tampering.</p>
+          <div class="proj-tags"><span class="tag">REST</span><span class="tag">JWT</span><span class="tag">Access Control</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">client-style</span></div>
+        </article>
+        <article class="proj-card clickable" data-project="dvwa" tabindex="0" role="button" aria-label="Open details: DVWA brute force lab">
+          <div class="proj-top"><span class="proj-icon">🔓</span><span class="proj-badge">auth attack</span></div>
+          <div class="proj-cat">Web App · DVWA</div>
+          <h3>DVWA — Brute-Force Exploitation</h3>
+          <p class="proj-desc">Intercepted login requests with Burp, automated credential guessing with Hydra, and documented defenses: MFA, lockout, rate limiting.</p>
+          <div class="proj-tags"><span class="tag">Burp Suite</span><span class="tag">Hydra</span><span class="tag">Auth Hardening</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+      </div>
+
+      <div class="cat-head"><span class="path">~/</span>adversary simulation &amp; blue team</div>
+      <div class="proj-grid">
+        <article class="proj-card clickable" data-project="ransomware" tabindex="0" role="button" aria-label="Open details: Ransomware attack simulation">
+          <div class="proj-top"><span class="proj-icon">☣️</span><span class="proj-badge">full lifecycle</span></div>
+          <div class="proj-cat">Offensive &amp; Defensive</div>
+          <h3>Ransomware Attack Simulation</h3>
+          <p class="proj-desc">Built a dropper, delivered via phishing, executed payload to encrypt files, then recovered with a private key — mapping the full lifecycle end to end.</p>
+          <div class="proj-tags"><span class="tag">Phishing Sim</span><span class="tag">EternalBlue</span><span class="tag">Incident Response</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+        <article class="proj-card clickable" data-project="hackathon" tabindex="0" role="button" aria-label="Open details: CNY Hackathon cybersecurity track">
+          <div class="proj-top"><span class="proj-icon">🛰️</span><span class="proj-badge">SOC triage</span></div>
+          <div class="proj-cat">Blue Team · SIEM</div>
+          <h3>CNY Hackathon — Cybersecurity Track</h3>
+          <p class="proj-desc">Performed SOC-style alert triage and log analysis on simulated SIEM data; identified IOCs including suspicious IP activity and authentication abuse.</p>
+          <div class="proj-tags"><span class="tag">SIEM</span><span class="tag">Log Analysis</span><span class="tag">IOC</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">competition</span></div>
+        </article>
+      </div>
+
+      <div class="cat-head"><span class="path">~/</span>cryptography</div>
+      <div class="proj-grid">
+        <article class="proj-card clickable" data-project="crypto" tabindex="0" role="button" aria-label="Open details: Encryption lab">
+          <div class="proj-top"><span class="proj-icon">🔐</span><span class="proj-badge">confidentiality &amp; integrity</span></div>
+          <div class="proj-cat">Crypto · Key Management</div>
+          <h3>Encryption &amp; Key Management</h3>
+          <p class="proj-desc">Implemented symmetric &amp; asymmetric encryption with OpenSSL, GPG/Kleopatra, and WinSCP to encrypt, sign, transfer, and verify data across systems.</p>
+          <div class="proj-tags"><span class="tag">OpenSSL</span><span class="tag">GPG</span><span class="tag">SFTP</span></div>
+          <div class="proj-foot"><span class="proj-link">↗ view details</span><span class="proj-hint">PDF report</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================ CERTIFICATIONS ============================ -->
+    <section class="section" id="certs">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="path">bb@sec:~$</span> cat certs.json</span>
+        <h2 class="sec-title">Certifications</h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert">
+          <div class="cert-badge">🎖️</div>
+          <div>
+            <div class="cert-name">eJPT</div>
+            <div class="cert-org">INE — eLearnSecurity Junior Penetration Tester</div>
+            <span class="cert-status earned">● earned</span>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge">🎯</div>
+          <div>
+            <div class="cert-name">OSCP</div>
+            <div class="cert-org">Offensive Security Certified Professional</div>
+            <span class="cert-status progress">◐ in progress</span>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge">🕸️</div>
+          <div>
+            <div class="cert-name">BSCP</div>
+            <div class="cert-org">PortSwigger — Burp Suite Certified Practitioner</div>
+            <span class="cert-status progress">◐ in progress</span>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge">🤖</div>
+          <div>
+            <div class="cert-name">AI-300</div>
+            <div class="cert-org">OffSec — AI Security &amp; Exploitation</div>
+            <span class="cert-status progress">◐ in progress</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cat-head"><span class="path">~/</span>education</div>
+      <div class="term">
+        <div class="term-bar">
+          <span class="term-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+          <span class="term-file">education.txt</span>
+        </div>
+        <div class="term-body">
+          <div class="exp-top">
+            <span class="exp-role">Syracuse University</span>
+            <span class="exp-date">Expected May 2026</span>
+          </div>
+          <div class="exp-org">B.S. Information Management &amp; Technology <span class="sub">· Concentration: Information Security · Minor: Computer Science</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ CONTACT ============================ -->
+    <section class="section" id="contact">
+      <div class="sec-head">
+        <span class="eyebrow"><span class="path">bb@sec:~$</span> ./contact --open</span>
+        <h2 class="sec-title">Contact</h2>
+      </div>
+      <div class="term">
+        <div class="term-bar">
+          <span class="term-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+          <span class="term-file">connect.sh</span>
+        </div>
+        <div class="term-body">
+          <div class="contact-grid">
+            <div>
+              <p style="color:var(--muted);">Open to <strong style="color:var(--text)">full-time offensive security roles</strong>, internships, and <strong style="color:var(--text)">authorized security assessments</strong>. Let's talk.</p>
+              <div class="contact-links">
+                <a href="mailto:bebasset@syr.edu"><span class="arrow">→</span> bebasset@syr.edu <span style="color:var(--faint)">· roles &amp; internships</span></a>
+                <a href="mailto:bassette.secure@gmail.com"><span class="arrow">→</span> bassette.secure@gmail.com <span style="color:var(--faint)">· consulting &amp; assessments</span></a>
+                <a href="https://www.linkedin.com/in/belizaireb" target="_blank" rel="noopener"><span class="arrow">→</span> linkedin.com/in/belizaireb</a>
+                <a href="Belizaire_Bassette_PenTesterResume.pdf" target="_blank" rel="noopener"><span class="arrow">→</span> résumé.pdf</a>
+              </div>
+              <p class="contact-note"><strong style="color:var(--text)">Ethical note:</strong> I only test assets with explicit authorization or within approved programs.</p>
+            </div>
+            <div class="contact-side">
+              <div><span class="k">status&nbsp;&nbsp;:</span> open to work</div>
+              <div><span class="k">location:</span> Syracuse, NY</div>
+              <div><span class="k">role&nbsp;&nbsp;&nbsp;&nbsp;:</span> Jr. Penetration Tester</div>
+              <div><span class="k">focus&nbsp;&nbsp;&nbsp;:</span> Web · Network · API</div>
+              <div><span class="k">certs&nbsp;&nbsp;&nbsp;:</span> eJPT · OSCP · BSCP</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Belizaire Bassette II · Offensive Security</span>
+    <a href="https://www.linkedin.com/in/belizaireb" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <span>More labs &amp; CTF writeups coming soon.</span>
+  </footer>
+
+  <!-- ============================ MODAL ============================ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="term modal" id="modal">
+      <div class="term-bar">
+        <span class="term-dots"><i class="dot-r"></i><i class="dot-y"></i><i class="dot-g"></i></span>
+        <span class="term-file" id="modalFile">engagement.md</span>
+        <button class="modal-close" id="modalClose" aria-label="Close dialog">✕</button>
+      </div>
+      <div class="term-body">
+        <div class="modal-cat" id="modalCat"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div id="modalChainWrap" hidden>
+          <div class="modal-label">attack chain</div>
+          <div class="modal-chain" id="modalChain"></div>
+        </div>
+        <div class="modal-label">highlights</div>
+        <ul class="modal-bullets" id="modalBullets"></ul>
+        <div class="modal-label">tools &amp; tech</div>
+        <div class="modal-pills" id="modalPills"></div>
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+    </div>
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer_row">
-    <a href="https://www.linkedin.com/in/belizaireb" target="_blank"><strong>Connect with me on LinkedIn</strong></a>
-    <a href="" target="_blank" rel="noopener">Forethreat Security</a>
-    <span><strong>More labs &amp; CTF writeups coming soon. </strong></span>
-  </div>
+  <script>
+  /* ===================== BOOT LOADER ===================== */
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var loader = document.getElementById('loader');
+    var nav = document.getElementById('nav');
+    function reveal() { if (nav) nav.classList.add('visible'); }
+    if (reduce) { if (loader) loader.style.display = 'none'; reveal(); return; }
+
+    var lines = Array.prototype.slice.call(document.querySelectorAll('.boot-line'));
+    var grant = document.querySelector('.boot-grant');
+    var bar = document.getElementById('bootBar');
+    var i = 0;
+    (function step() {
+      if (i < lines.length) {
+        lines[i].classList.add('show');
+        if (bar) bar.style.width = Math.round(((i + 1) / (lines.length + 1)) * 100) + '%';
+        i++;
+        setTimeout(step, 430);
+      } else {
+        if (grant) grant.classList.add('show');
+        if (bar) bar.style.width = '100%';
+        setTimeout(function () {
+          loader.classList.add('done');
+          reveal();
+          setTimeout(function () { loader.style.display = 'none'; }, 600);
+        }, 620);
+      }
+    })();
+    /* Safety net: never let the loader trap the page */
+    setTimeout(function () {
+      if (loader && loader.style.display !== 'none') {
+        loader.classList.add('done'); reveal();
+        setTimeout(function () { loader.style.display = 'none'; }, 600);
+      }
+    }, 5000);
+  })();
+
+  /* ===================== FOOTER YEAR ===================== */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ===================== SMOOTH SCROLL ===================== */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id === '#') return;
+      var t = document.querySelector(id);
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); history.replaceState(null, '', id); }
+    });
+  });
+
+  /* ===================== NAV: active section + label ===================== */
+  (function () {
+    var map = [
+      ['top', 'cover'], ['whoami', 'whoami'], ['arsenal', 'arsenal'],
+      ['experience', 'experience'], ['engagements', 'engagements'],
+      ['certs', 'certs'], ['contact', 'contact']
+    ];
+    var label = document.getElementById('navSection');
+    var links = document.querySelectorAll('.nav-links a');
+    function onScroll() {
+      var cur = map[0];
+      map.forEach(function (m) {
+        var el = document.getElementById(m[0]);
+        if (el && window.scrollY >= el.offsetTop - 160) cur = m;
+      });
+      if (label) label.textContent = cur[1];
+      links.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + cur[0]);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  /* ===================== COUNTERS + FINDING BARS ===================== */
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function animateCounter(el) {
+      var target = +el.dataset.target;
+      var text = el.dataset.text;
+      if (reduce) { el.textContent = text || target; return; }
+      var c = 0, step = Math.max(1, target / 45);
+      var iv = setInterval(function () {
+        c = Math.min(c + step, target);
+        el.textContent = text ? (c >= target ? text : Math.floor(c)) : Math.floor(c);
+        if (c >= target) { el.textContent = text || target; clearInterval(iv); }
+      }, 30);
+    }
+    document.querySelectorAll('.stat .n').forEach(function (el) {
+      new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (e) { if (e.isIntersecting) { animateCounter(el); obs.disconnect(); } });
+      }, { threshold: 0.5 }).observe(el);
+    });
+    document.querySelectorAll('.finding-fill').forEach(function (el) {
+      if (reduce) { el.style.width = el.dataset.w + '%'; return; }
+      new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (e) { if (e.isIntersecting) { el.style.width = el.dataset.w + '%'; obs.disconnect(); } });
+      }, { threshold: 0.3 }).observe(el);
+    });
+  })();
+
+  /* ===================== PROJECT MODAL ===================== */
+  (function () {
+    var A = '<span class="arrow">→</span>';
+    var PROJECTS = {
+      archangel: {
+        file: 'archangel.md', cat: 'Linux · Web Exploitation · TryHackMe Boot2Root',
+        title: 'Archangel — Full Attack Chain',
+        desc: 'Compromised a Linux target using a structured methodology: exploited a Local File Inclusion (LFI) to perform log poisoning and achieve unauthenticated Remote Code Execution (RCE), then chained misconfigurations to full root compromise.',
+        chain: 'recon ' + A + ' dir enumeration ' + A + ' LFI discovery ' + A + ' log poisoning ' + A + ' RCE ' + A + ' reverse shell ' + A + ' cron abuse ' + A + ' SUID / PATH hijacking ' + A + ' root',
+        bullets: [
+          'Discovered and exploited an LFI, escalating it to RCE via web-server log poisoning',
+          'Established a reverse shell for interactive foothold',
+          'Escalated to root by abusing a cron job and hijacking the PATH of a SUID binary',
+          'Demonstrated end-to-end compromise: initial access → full system control'
+        ],
+        pills: ['TryHackMe', 'LFI → RCE', 'Log Poisoning', 'Burp Suite', 'Cron Abuse', 'PATH Hijacking', 'Linux PrivEsc'],
+        pdf: 'Archangel THM Room Walkthrough.pdf'
+      },
+      attacktive: {
+        file: 'attacktive-directory.md', cat: 'Active Directory · Windows · TryHackMe',
+        title: 'Attacktive Directory — AD Attack Path',
+        desc: 'Worked a full Windows domain attack path from host discovery to full domain compromise — identifying the DC via exposed AD services, enumerating users, abusing Kerberos, and dumping credentials.',
+        chain: 'nmap ' + A + ' enum4linux ' + A + ' kerbrute (user validation) ' + A + ' AS-REP Roasting ' + A + ' hashcat ' + A + ' SMB enumeration ' + A + ' secretsdump / DRSUAPI ' + A + ' Pass-the-Hash (Evil-WinRM)',
+        bullets: [
+          'Enumerated valid domain users with Kerbrute',
+          'Exploited AS-REP Roasting to recover svc-admin credentials, cracked with Hashcat',
+          'Recovered additional credentials from a backup SMB share (base64-encoded)',
+          'Performed DCSync-style credential dumping and authenticated via Pass-the-Hash'
+        ],
+        pills: ['Active Directory', 'Kerbrute', 'AS-REP Roasting', 'Hashcat', 'SMB', 'secretsdump.py', 'Evil-WinRM'],
+        pdf: 'THM+Attacktive+Directory+Writeup1.pdf'
+      },
+      pfsense: {
+        file: 'pfsense-pentest.md', cat: 'Firewall · Enterprise Network · IST 323',
+        title: 'pfSense Firewall Penetration Test',
+        desc: 'Assessed a Windows enterprise network protected by a pfSense firewall, from recon to remediation. Reviewed WAN/LAN rules, ran guided (white-box) and unguided (black-box) tests, then hardened policy and re-scanned to confirm fixes without breaking legitimate access.',
+        chain: 'recon ' + A + ' scanning ' + A + ' vulnerability analysis ' + A + ' exploitation planning ' + A + ' hardening ' + A + ' re-scan / verify',
+        bullets: [
+          'Mapped hosts, enumerated services, and analyzed CVEs with Nmap, Nessus, Traceroute, and OpenVAS',
+          'Reviewed pfSense WAN/LAN rule sets and identified policy weaknesses',
+          'Hardened firewall policies, reduced attack surface, and verified via re-scan',
+          'Completed a DMZ assessment evaluating design best practices and common mistakes',
+          'Balanced security, usability, and business needs throughout'
+        ],
+        pills: ['pfSense', 'Nmap', 'Nessus', 'OpenVAS', 'DMZ Hardening', '5-Phase Methodology'],
+        pdf: 'Penetration-Testing-a-pfSense-Firewall-(3e)-Belizaire-Bassette-II.pdf'
+      },
+      netvuln: {
+        file: 'network-vuln-assessment.md', cat: 'Kali Linux · Nessus',
+        title: 'Network Vulnerability Assessment',
+        desc: 'Performed comprehensive scans from a Kali Linux environment, enumerating open ports, services, and misconfigurations, then translated raw scan output into a structured, prioritized report.',
+        chain: '',
+        bullets: [
+          'Enumerated open ports, running services, and misconfigurations across the target network',
+          'Documented critical, high, and medium-risk findings',
+          'Mapped each finding to concrete remediation: patching, disabling legacy protocols, tightening firewall rules',
+          'Communicated risk clearly to both technical and non-technical stakeholders'
+        ],
+        pills: ['Kali Linux', 'Nessus', 'Vulnerability Scanning', 'Risk Triage', 'Reporting'],
+        pdf: 'Network Vulnerability Assesment Project.pdf'
+      },
+      api: {
+        file: 'api-bola-idor.md', cat: 'API Security · REST',
+        title: 'API Penetration Testing — BOLA / IDOR',
+        desc: 'Tested REST APIs for broken object-level authorization (BOLA/IDOR), excessive data exposure, and weak access control, using JWT token manipulation and object-reference tampering — documented to professional client-deliverable standards.',
+        chain: '',
+        bullets: [
+          'Probed object-level authorization with reference-tampering and horizontal/vertical access tests',
+          'Manipulated JWTs to test token handling and trust boundaries',
+          'Captured request/response evidence and wrote clear reproduction steps',
+          'Delivered findings with CVSS ratings and secure-design remediation guidance'
+        ],
+        pills: ['REST', 'BOLA / IDOR', 'JWT', 'Access Control', 'CVSS', 'Rate Limiting'],
+        pdf: ''
+      },
+      dvwa: {
+        file: 'dvwa-bruteforce.md', cat: 'Web App · DVWA',
+        title: 'DVWA — Brute-Force Exploitation',
+        desc: 'In an isolated DVWA environment, safely simulated brute-force attacks against authentication and evaluated the impact of weak passwords and missing rate limiting.',
+        chain: 'intercept login (Burp) ' + A + ' extract POST params ' + A + ' Hydra credential attack ' + A + ' assess impact ' + A + ' recommend defenses',
+        bullets: [
+          'Intercepted HTTP login requests with Burp Suite and extracted POST parameters',
+          'Automated credential guessing with Hydra',
+          'Evaluated impact of weak passwords and absent rate limiting on auth endpoints',
+          'Documented defenses: MFA, account lockout, stronger password policy'
+        ],
+        pills: ['DVWA', 'Burp Suite', 'Hydra', 'Auth Hardening'],
+        pdf: 'DVWA_Brute_Force_Lab1.1.pdf'
+      },
+      ransomware: {
+        file: 'ransomware-sim.md', cat: 'Adversary Simulation · Offensive & Defensive · IST 323',
+        title: 'Ransomware Attack Simulation',
+        desc: 'In a safe, controlled environment, simulated the full ransomware lifecycle end to end — from delivery to encryption to recovery — from both attacker and defender perspectives.',
+        chain: 'build dropper ' + A + ' phishing delivery ' + A + ' payload execution ' + A + ' file encryption ' + A + ' recovery (private key)',
+        bullets: [
+          'Built a dropper and delivered it via a phishing simulation',
+          'Executed the payload to encrypt victim files, then recovered using a private key',
+          'Explored exploits such as EternalBlue and observed host behavior during/after infection',
+          'Reinforced offline backups, patch management, email security, and rehearsed IR plans'
+        ],
+        pills: ['Ransomware', 'Phishing Simulation', 'EternalBlue', 'Incident Response', 'Backups'],
+        pdf: 'Performing+a+Ransomware+Attack+-+Belizaire+Bassette+II.pdf'
+      },
+      hackathon: {
+        file: 'cny-hackathon.md', cat: 'Blue Team · SIEM · Competition',
+        title: 'CNY Hackathon — Cybersecurity Track',
+        desc: 'Competed in the Central New York Hackathon cybersecurity track, performing SOC-style alert triage and log analysis against simulated SIEM data.',
+        chain: '',
+        bullets: [
+          'Performed SOC-style alert triage and log analysis using simulated SIEM data',
+          'Identified indicators of compromise (IOCs) including suspicious IP activity',
+          'Detected authentication abuse patterns within the log set'
+        ],
+        pills: ['SIEM', 'Log Analysis', 'SOC Triage', 'IOC Detection'],
+        pdf: ''
+      },
+      crypto: {
+        file: 'encryption-lab.md', cat: 'Cryptography · Key Management · IST 323',
+        title: 'Encryption & Key Management',
+        desc: 'Explored real-world encryption workflows and key management — implementing symmetric and asymmetric encryption to encrypt, sign, transfer, and verify data between systems.',
+        chain: '',
+        bullets: [
+          'Used Kleopatra, OpenSSL, WinSCP, and Linux tooling (gpg, echo, touch, ls)',
+          'Demonstrated how encryption and digital signatures secure communication channels',
+          'Applied public/private key pairs and hybrid encryption in practice',
+          'Reinforced confidentiality, integrity, and authentication principles'
+        ],
+        pills: ['OpenSSL', 'GPG', 'Kleopatra', 'SFTP · WinSCP', 'Digital Signatures'],
+        pdf: 'Using Encryption to Enhance Confidentiality and Integrity (4e) - Belizaire Bassette II.pdf'
+      }
+    };
+
+    var overlay = document.getElementById('modalOverlay');
+    var elFile = document.getElementById('modalFile');
+    var elCat = document.getElementById('modalCat');
+    var elTitle = document.getElementById('modalTitle');
+    var elDesc = document.getElementById('modalDesc');
+    var chainWrap = document.getElementById('modalChainWrap');
+    var elChain = document.getElementById('modalChain');
+    var elBullets = document.getElementById('modalBullets');
+    var elPills = document.getElementById('modalPills');
+    var elActions = document.getElementById('modalActions');
+    var closeBtn = document.getElementById('modalClose');
+    var lastFocus = null;
+
+    function open(key) {
+      var p = PROJECTS[key];
+      if (!p) return;
+      elFile.textContent = p.file;
+      elCat.textContent = p.cat;
+      elTitle.textContent = p.title;
+      elDesc.textContent = p.desc;
+      if (p.chain) { elChain.innerHTML = p.chain; chainWrap.hidden = false; }
+      else { chainWrap.hidden = true; }
+      elBullets.innerHTML = p.bullets.map(function (b) { return '<li>' + b + '</li>'; }).join('');
+      elPills.innerHTML = p.pills.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('');
+      elActions.innerHTML = p.pdf
+        ? '<a class="btn btn-primary" href="' + p.pdf.replace(/"/g, '%22') + '" target="_blank" rel="noopener">↗ view full report (PDF)</a>'
+        : '<span class="proj-soon">▹ full writeup coming soon</span>';
+      overlay.hidden = false;
+      requestAnimationFrame(function () { overlay.classList.add('open'); });
+      document.body.style.overflow = 'hidden';
+      lastFocus = document.activeElement;
+      closeBtn.focus();
+    }
+    function close() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(function () { overlay.hidden = true; }, 220);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.querySelectorAll('.proj-card[data-project]').forEach(function (card) {
+      var key = card.getAttribute('data-project');
+      card.addEventListener('click', function () { open(key); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(key); }
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+  })();
+  </script>
 </body>
 </html>
-
